@@ -12,10 +12,10 @@ int printColorMap(void) {
     ColorPair colorPair;
     for(majorColorIndex = 0; majorColorIndex < numberOfMajorColors; majorColorIndex++){
         for(minorColorIndex = 0; minorColorIndex < numberOfMinorColors; minorColorIndex++){
-        	colorPair.majorColor = majorColorIndex;
-			colorPair.minorColor = minorColorIndex;
-			pairNumber = GetPairNumberFromColor(&colorPair);
-            printf("%-2d | %-6s | %s\n", pairNumber, majorColor[majorColorIndex], minorColor[minorColorIndex]);
+        	colorPair.majorColor = (MajorColor)majorColorIndex;
+		colorPair.minorColor = (MinorColor)minorColorIndex;
+		pairNumber = GetPairNumberFromColor(&colorPair);
+            	printf("%-2d | %-6s | %s\n", pairNumber, majorColor[majorColorIndex], minorColor[minorColorIndex]);
         }
     }
     return majorColorIndex * minorColorIndex;
