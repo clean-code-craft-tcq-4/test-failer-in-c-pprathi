@@ -8,4 +8,4 @@
  * Function prototypes
  *********************************************************************************************/
 int networkAlertStub(float celcius);
-void alertInCelcius(float farenheit);
+int alertInCelcius(float farenheit);
