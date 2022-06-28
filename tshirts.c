@@ -6,28 +6,36 @@
 //Function to determine the T-shirt sizeName based on the size in cms
 char DetermineSizeName(int SizeIncms) {
     char sizeName = '\0';
-    if(SizeIncms < M_MINSIZE)
+    if(SizeIncms >= S_MINSIZE && SizeIncms < M_MINSIZE)
     {
         sizeName = 'S';
     }
-    else if(SizeIncms > M_MINSIZE && SizeIncms < L_MINSIZE)
+    else if(SizeIncms >= M_MINSIZE && SizeIncms < L_MINSIZE)
     {
         sizeName = 'M';
     }
-    else
+    else if(SizeIncms >= L_MINSIZE && SizeIncms < L_MAXSIZE)
     {
         sizeName = 'L';
     }
     return sizeName;
 }
 
-int main(void) {
-    assert(DetermineSizeName(37) == 'S');
-    assert(DetermineSizeName(38) == 'M');
-    assert(DetermineSizeName(40) == 'M');
-    assert(DetermineSizeName(42) == 'L');
-    assert(DetermineSizeName(43) == 'L');
+//Test function
+void TestSizeNames(void)
+{
+	assert(DetermineSizeName(20) == '\0');
+	assert(DetermineSizeName(37) == 'S');
+	assert(DetermineSizeName(38) == 'M');
+	assert(DetermineSizeName(40) == 'M');
+	assert(DetermineSizeName(42) == 'L');
+	assert(DetermineSizeName(43) == 'L');
+	assert(DetermineSizeName(50) == '\0');
+}
 
+int main(void) {
+
+	TestSizeNames();
     printf("All is well (maybe!)\n");
     return 0;
 }
