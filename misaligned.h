@@ -1,4 +1,9 @@
 /**********************************************************************************************
+ * Defines
+ *********************************************************************************************/
+#define MAX_PAIR_NUMBER		25
+
+/**********************************************************************************************
  * Enumerations
  *********************************************************************************************/
 typedef enum
@@ -30,6 +35,8 @@ typedef struct {
 /**********************************************************************************************
  * Function prototypes
  *********************************************************************************************/
-int 	printColorMap			(void);
-int 	GetPairNumberFromColor	(const ColorPair* colorPair);
-void 	testPairToNumber		(MajorColor major, MinorColor minor, int expectedPairNumber);
+int 	printColorMap					(void);
+int 	GetPairNumberFromColor			(const ColorPair* colorPair);
+void 	testPairToNumber				(MajorColor major, MinorColor minor, int expectedPairNumber);
+void 	testAlignmentInPrintColorMap	(void);
+int 	getMaxLenOfMajorColor			(void);
