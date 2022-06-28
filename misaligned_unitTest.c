@@ -30,8 +30,9 @@ int getMaxLenOfMajorColor(void)
 
 void testAlignmentInPrintColorMap(void)
 {
-	int i;
-	for(i = 0; i< strlen(buffer); i++){
+	int i, len;
+	len = strlen(buffer);
+	for(i = 0; i < len; i++){
 	assert(buffer[i] == testbuffer[i]);
 	}
 }
